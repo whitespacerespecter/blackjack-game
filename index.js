@@ -1,5 +1,5 @@
 let hasBlackJack = false
-let isAlive = true
+let isAlive = false
 let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
@@ -13,6 +13,8 @@ function startGame() {
     let secondCard = getRandomCard();
     cardsArray = [firstCard, secondCard]
     sum = firstCard + secondCard
+    isAlive = true
+    
     renderGame()
 }
 
@@ -53,15 +55,20 @@ function drawButton(){
 }
 
 function newCard() {
-    messageEl.textContent = "Drawing a new card from the deck!"
-    card = getRandomCard(11);
-    cardsArray.push(card)
-    sum = sum + card;
-
-    renderGame()
     
-    console.log("Card: +", card)
-    console.log("Sum: ", sum)
+    if (isAlive) {
+        messageEl.textContent = "Drawing a new card from the deck!"
+        card = getRandomCard(11);
+        cardsArray.push(card)
+        sum = sum + card;
+    
+        renderGame()
+        
+        console.log("Card: +", card)
+        console.log("Sum: ", sum)
+    } else {
+        messageEl.textContent = "Press the 'START GAME' button!"
+    }
 }
 
 function getRandomCard() {
