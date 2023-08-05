@@ -47,6 +47,11 @@ function renderGame() {
     }
 }
 
+function drawButton(){
+    document.querySelector("#draw-btn").style.backgroundColor = "#DAA520";
+    document.querySelector("#draw-btn").style.color = "#016f32";
+}
+
 function newCard() {
     messageEl.textContent = "Drawing a new card from the deck!"
     card = getRandomCard(11);
@@ -60,5 +65,15 @@ function newCard() {
 }
 
 function getRandomCard() {
-    return Math.ceil(Math.random() * 11);
+    
+    let cardDraw = Math.ceil(Math.random() * 13);
+    
+    if (cardDraw === 1) {
+        return 11
+    } else if (cardDraw >= 11) {
+        return 10
+    } else {
+        return cardDraw
+    }
+    
 }
