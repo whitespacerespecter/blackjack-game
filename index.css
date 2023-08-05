@@ -12,21 +12,34 @@ body {
     background-size: cover;
     font-size: 20px;
     font-weight: bold;
+    color: white;
 }
 
 .container {
     width: 400px;
+    height: 400px;
     margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1 {
     color: goldenrod;
 }
 
-p{
-    color: white;
-}
-
 #message-el {
     font-style: italic;    
+}
+
+button {
+    border: none;
+    color: #016f32;
+    background: goldenrod;
+    width: 150px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 5px;
+    border-radius: 5px;
 }
