@@ -40,9 +40,11 @@ function renderGame() {
         }
         
         document.querySelector("#message-el").style.backgroundColor = "#FF0000";
-        
-    }
+        setTimeout( () => {
+            location.reload();
+            }, 1000)
 
+    }
 }
 
 function newCard() {
